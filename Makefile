@@ -27,6 +27,9 @@ clean:
 dockerize:
 	$(DOCKER) build -t $(DOCKERTAG) .
 
+publish:
+	$(DOCKER) publish $(DOCKERTAG)
+
 .PHONY: repl check clean
 
 ifndef VERBOSE
