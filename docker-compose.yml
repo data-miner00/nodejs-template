@@ -1,0 +1,9 @@
+version: "3.9"
+services:
+  nodejs-template-service:
+    container_name: nodejs-template
+    image: mumk5515/nodejs-template:0.0.0.RELEASE
+    cpus: 1.5
+    mem_limit: 2048m
+    ports:
+      - "3000:3000"

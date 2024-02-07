@@ -2,6 +2,9 @@ NODE=node
 NODEMON=nodemon
 TSC=tsc
 PRETTIER=prettier
+DOCKER=docker
+
+DOCKERTAG=mumk5515/nodejs-template:0.0.0.RELEASE
 
 repl:
 	$(NODE)
@@ -20,6 +23,9 @@ check:
 
 clean:
 	rm dist
+
+dockerize:
+	$(DOCKER) build -t $(DOCKERTAG) .
 
 .PHONY: repl check clean
 
