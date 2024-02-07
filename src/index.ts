@@ -1,4 +1,4 @@
-//import { value } from "@lib/lib";
+import { a } from "./interval.js";
 const value = 1;
 
-console.log("hello world" + value);
+console.log(value + a);

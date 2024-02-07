@@ -20,3 +20,9 @@ check:
 
 clean:
 	rm dist
+
+.PHONY: repl check clean
+
+ifndef VERBOSE
+	.SILENT:
+endif
