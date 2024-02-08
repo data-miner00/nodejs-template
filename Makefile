@@ -5,6 +5,8 @@ PRETTIER=prettier
 DOCKER=docker
 
 DOCKERTAG=mumk5515/nodejs-template:0.0.0.RELEASE
+BUILDDIR := dist
+TESTFILES := $(addprefix $(BUILDDIR)/,test.test.js)
 
 repl:
 	$(NODE)
@@ -22,7 +24,7 @@ check:
 	$(PRETTIER) . --check
 
 clean:
-	rm -rf dist
+	rm -rf $(BUILDDIR)
 
 dockerize:
 	$(DOCKER) build -t $(DOCKERTAG) .
@@ -30,7 +32,10 @@ dockerize:
 publish:
 	$(DOCKER) push $(DOCKERTAG)
 
-.PHONY: repl check clean
+test:
+	$(NODE) --test
+
+.PHONY: repl run build format check clean dockerize publish test
 
 ifndef VERBOSE
 	.SILENT:

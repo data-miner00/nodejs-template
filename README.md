@@ -8,6 +8,7 @@ No dependencies, no bullshit.
 - [TypeScript v5.3.3](https://www.typescriptlang.org/)
 - [Node.js](https://nodejs.org/en)
 - Prettier
+- [ts-node](https://typestrong.org/ts-node/)
 
 ## Pulling the Docker Image
 
