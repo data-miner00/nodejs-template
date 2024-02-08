@@ -22,13 +22,13 @@ check:
 	$(PRETTIER) . --check
 
 clean:
-	rm dist
+	rm -rf dist
 
 dockerize:
 	$(DOCKER) build -t $(DOCKERTAG) .
 
 publish:
-	$(DOCKER) publish $(DOCKERTAG)
+	$(DOCKER) push $(DOCKERTAG)
 
 .PHONY: repl check clean
 
