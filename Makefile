@@ -3,10 +3,13 @@ NODEMON=nodemon
 TSC=tsc
 PRETTIER=prettier
 DOCKER=docker
+NODE_GYP=node-gyp
 
-DOCKERTAG=mumk5515/nodejs-template:0.0.0.RELEASE
+DOCKERTAG=mumk5515/nodejs-template:0.1.0.RELEASE
 BUILDDIR := dist
 TESTFILES := $(addprefix $(BUILDDIR)/,test.test.js)
+
+CDIR := build
 
 repl:
 	$(NODE)
@@ -14,7 +17,12 @@ repl:
 run:
 	$(NODEMON)
 
-build:
+build: cbuild tsbuild
+
+cbuild:
+	$(NODE_GYP) build
+
+tsbuild:
 	$(TSC) -p .
 
 format:

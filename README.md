@@ -19,3 +19,12 @@ To pull the image, simply
 ```
 docker pull mumk5515/nodejs-template
 ```
+
+## Issues to fix
+
+- [ ] ts-node issue
+- [ ] typescript declarations
+
+## Resources
+
+- [node-addon-examples](https://github.com/nodejs/node-addon-examples)
